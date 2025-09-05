@@ -1,0 +1,34 @@
+
+<!-- saved from url=(0088)file:///C:/Users/Modesta/Documents/NetBeansProjects/MyBilling/src/mybilling/encrypt.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body>
+     <script>
+       var encodedstring;
+       function encrypt(){
+           var basestring= document.getElementById("en").value;
+           encodedstring=window.btoa(basestring);
+           document.getElementById("de").value=encodedstring;
+       }
+        function decrypt(){var decodedstring=window.atob(encodedstring);
+          document.getElementById("de").value=decodedstring;
+
+        }
+     </script>
+     <input type="text" id="en"><br>
+     <input type="text" id="de"><br>
+     <button onclick="encrypt()">Encrypt</button><br>
+     <button onclick="decrypt()">Decrypt</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
