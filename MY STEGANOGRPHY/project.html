@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Image Steganography</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="login-container">
+        <div class="login-form">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password">
+            </div>
+            <button id="login-btn">Login</button>
+            <p id="register-link">Don't have an account? <a href="#" id="show-register">Register</a></p>
+            <p id="error-message" class="error"></p>
+        </div>
+
+        <div class="register-form hidden">
+            <h2>Register</h2>s
+            <div class="form-group">
+                <label for="reg-username">Username</label>
+                <input type="text" id="reg-username" placeholder="Choose username">
+            </div>
+            <div class="form-group">
+                <label for="reg-password">Password</label>
+                <input type="password" id="reg-password" placeholder="Choose password">
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm password">
+            </div>
+            <button id="register-btn">Register</button>
+            <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+            <p id="reg-error-message" class="error"></p>
+        </div>
+    </div>
+
+    <div class="container hidden" id="app-container">
+        <header>
+            <h1>Secure Image Steganography</h1>
+            <button id="logout-btn">Logout</button>
+        </header>
+        
+        <div class="main-content">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="encode">Encode</button>
+                <button class="tab-btn" data-tab="decode">Decode</button>
+            </div>
+            
+            <div class="tab-content active" id="encode">
+                <div class="upload-area">
+                    <h3>Encode Secret Message</h3>
+                    <input type="file" id="image-upload" accept="image/*">
+                    <div class="image-preview" id="image-preview">
+                        <p>No image selected</p>
+                    </div>
+                    <textarea id="secret-message" placeholder="Enter your secret message here..."></textarea>
+                    <div class="form-group">
+                        <label for="encryption-key">Encryption Key (optional)</label>
+                        <input type="password" id="encryption-key" placeholder="Enter encryption key">
+                    </div>
+                    <button id="encode-btn">Encode Message</button>
+                    <div class="result-area">
+                        <a id="download-link" class="hidden">Download Encoded Image</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="decode">
+                <div class="upload-area">
+                    <h3>Decode Secret Message</h3>
+                    <input type="file" id="encoded-image-upload" accept="image/*">
+                    <div class="image-preview" id="encoded-image-preview">
+                        <p>No image selected</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="decryption-key">Decryption Key (if used during encoding)</label>
+                        <input type="password" id="decryption-key" placeholder="Enter decryption key">
+                    </div>
+                    <button id="decode-btn">Decode Message</button>
+                    <div class="result-area">
+                        <textarea id="decoded-message" readonly placeholder="Decoded message will appear here"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
